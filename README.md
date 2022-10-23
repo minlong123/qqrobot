@@ -20,7 +20,11 @@ pip install graia-application-mirai==0.18.4
 
 安装这两条命令的时候，遇到下面截图的问题，请按下面的解决方案处理：
 
+<<<<<<< HEAD
 ![图片示例](images/1666489897753.png "图片示例")
+=======
+![图片](images/1666489897753.png "图片示例")
+>>>>>>> a2492760ed491f6499ea0c92abf709bd4c541240
 
 Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: 'c:\\program files\\python37\\Lib\\site-packages\\typing_extensions.py'
 Consider using the `--user` option or check the permissions.
