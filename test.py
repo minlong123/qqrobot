@@ -11,6 +11,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 from notif import notif
+import requests
 
 smtpserver='smtp.163.com'
 
@@ -32,10 +33,18 @@ subject='消息监听'
 robotqq=1249430088
 
 
+# 手机消息通知推送配置
+mobilecid='744f59840403d83fd2f8f94ef86a558e'
+
+# 手机通知，仅限于安卓手机
+def sendMobile(title,con):
+    url='http://hsapi.zaierkeji.com/api/v1/setmessage?title='+title+"&con="+con+"&cid="+mobilecid
+    if mobilecid:
+        
+        requests.get(url)
 
 
-
-
+# 邮件通知
 def sendEmail(val):
 
     # 邮件内容
@@ -67,8 +76,6 @@ def sendEmail(val):
 
 
 
-
-
 loop = asyncio.get_event_loop()
 
 bcc = Broadcast(loop=loop)
@@ -93,11 +100,13 @@ async def friend_message_listener(app: GraiaMiraiApplication, friend: Friend,mes
     
     sendEmail(ttt)
 
+    title="收到好友("+str(friend.nickname)+")："+str(friend.id)+"的一条信息"
+    cons=str(message.get(Plain)[0].text)
+    sendMobile(title,cons)
+
     # await app.sendFriendMessage(friend, MessageChain.create([
     #     Plain("QQ不方便，无法回复，请加我微信：pingfandeminlong 咨询")
     # ]))
-
-
 
 
 @bcc.receiver("GroupMessage")
@@ -136,6 +145,11 @@ async def group_message_listener(app: GraiaMiraiApplication,
 
             # 发送邮件
             sendEmail(ttt)
+
+            # 发送手机通知
+            title="群:"+str(member.group.id)+"("+str(group.name)+")"
+            cons=str(message.get(Plain)[0].text)
+            sendMobile(title,cons)
 
             
 app.launch_blocking()
