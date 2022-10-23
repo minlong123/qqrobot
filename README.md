@@ -20,7 +20,11 @@ pip install graia-application-mirai==0.18.4
 
 安装这两条命令的时候，遇到下面截图的问题，请按下面的解决方案处理：
 
+<<<<<<< HEAD
+![图片示例](images/1666489897753.png "图片示例")
+=======
 ![图片](images/1666489897753.png "图片示例")
+>>>>>>> a2492760ed491f6499ea0c92abf709bd4c541240
 
 Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: 'c:\\program files\\python37\\Lib\\site-packages\\typing_extensions.py'
 Consider using the `--user` option or check the permissions.
@@ -37,7 +41,7 @@ pip install graia-application-mirai==0.18.4 --user
 python发送邮箱的时候遇到编码问题：
 
 UnicodeDecodeError: 'utf-8' codec can't decode byte 0xc0 in position 0: invalid start byte
-
+![图片示例](images/1666489909578.png "图片示例")
 
 解决办法：
 https://blog.csdn.net/prince70/article/details/109625449
@@ -49,7 +53,7 @@ hostname, aliases, ipaddrs = gethostbyaddr(name.encode('ascii','ignore'))
 
 
 如果报错：
-
+![图片示例](images/1666490152145.png "图片示例")
 
 
 AttributeError: 'Element' object has no attribute 'asSerializationString'
@@ -60,6 +64,7 @@ AttributeError: 'Element' object has no attribute 'asSerializationString'
 pip install graia-application-mirai --user
 pip install graia-application-mirai==0.18.4 --user
 
+![图片示例](images/1666490185651.png "图片示例")
 
 然后点击start.bat即可恢复正常。
 
@@ -71,7 +76,7 @@ pip install graia-application-mirai==0.18.4 --user
 找到机器人文件夹下的
 config\Console\AutoLogin.yml
 
-
+![图片示例](images/1666490229137.png "图片示例")
 
 然后再找到：
 test.py文件里的机器人账号也必须要更改。
@@ -80,11 +85,11 @@ robotqq=
 
 机器人账号都改完之后，关闭所有命令行窗口，进行下面的操作：
 
-
+![图片示例](images/1666490256473.png "图片示例")
 
 点击mcl.cmd后，出现下面的提示，才算登录成功。
 
-
+![图片示例](images/1666490267971.png "图片示例")
 
 
 
@@ -92,7 +97,7 @@ robotqq=
 
 
 找到robotqq目录下的test.py文件
-
+![图片示例](images/1666490301676.png "图片示例")
 
 修改完关键词后，关闭start.bat文件打开的监听窗口即可，mcl.cmd打开的窗口不要关闭。然后重新点击start.bat文件，就生效了。
 
@@ -102,7 +107,7 @@ robotqq=
 
 一般是qq多次切换异地登录、账号密码错误、qq被冻结，请确定下qq是否正常，qq账号密码是否正确。然后等级太小的小号也会出现这样的情况
 有的客户修改密码也能解决该问题。客户需逐一排查qq问题。该问题由腾讯限制导致，所以请多尝试几个qq。实在不行，直接联系我。
-
+![图片示例](images/11.png "图片示例")
 
 相关问题：
 https://github.com/mamoe/mirai/issues/621
@@ -114,11 +119,12 @@ https://www.bbsmax.com/A/RnJW4qOB5q/
 机器人采用的端口号是8080，如果被占用了，请使用如下方法：
 
 找到test.py
+![图片示例](images/1666490363136.png "图片示例")
 
 8080改下
 
 然后移步robot\config\net.mamoe.mirai-api-http\setting.yml
-
+![图片示例](images/1666490380025.png "图片示例")
 
 
 改完后所有软件窗口关掉。
